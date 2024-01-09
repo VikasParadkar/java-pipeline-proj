@@ -35,9 +35,6 @@ pipeline
                 sh 'mvn test'
 				junit 'target/surefire-reports/**.xml'
 				jacoco exclusionPattern: '**/*Test*.class', execPattern: '**/target/**.exec,', inclusionPattern: '**/*.class', sourceInclusionPattern: '**/*.java', sourcePattern: 'target/src/main/java'
-		    withSonarQubeEnv(credentialsId: 'sonarqube') {
-    // some block
-}
             }
         }
         
